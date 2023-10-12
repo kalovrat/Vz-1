@@ -219,8 +219,9 @@
 /* Общий контейнер для диалогового окна и хвостика */
 .dialogue-container {
   position: relative;
-  margin: 50px auto;
-  width: 300px;
+    margin: 40px auto;
+    width: 300px;
+    margin-left: 323px;
 }
 
 /* Стили для диалогового окна */
