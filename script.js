@@ -4,13 +4,13 @@ const ctx = canvas.getContext('2d');
 container.style.marginTop = -1 *screen.height
 container.style.minHeight = screen.height 
 
-const w = canvas.width = screen.width
+const w = canvas.width = '1263px'
 const h = canvas.height = document.body.offsetHeight -3;
 console.log(1)
 const cols = Math.floor(w / 20) + 1;
 const ypos = Array(cols).fill(0);
 function adjustCanvasSize() {
-    const w = canvas.width = screen.width;
+    const w = canvas.width = '1263px'
     const h = canvas.height = document.body.offsetHeight - 3;
     canvas.style.minHeight = screen.height;
     const cols = Math.floor(w / 20) + 1;
