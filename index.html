@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style1.css"> -->
+</head>
+<style>
+    .holo {
+        position: relative;
+    z-index: 2;
+    width: 150px;
+    height: 5px;
+    margin-left: 303px !important;
+    margin: -9px auto 0;
+    background-color: rgba(0, 252, 252, 0.35);
+    border-radius: 100%;
+    filter: blur(2.5px);
+    transform: perspective(100px) rotateX(-30deg);
+    transform-style: preserve-3d;
+    animation: holographic 1.5s infinite alternate;
+    backface-visibility: hidden;
+    }
+    
+    .holo::after {
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      content: "";
+      height: 10px;
+      background-color: rgba(0, 252, 252, 0.5);
+      border-radius: 100%;
+      filter: blur(2.5px);
+    }
+    
+    .holo + .holo {
+      animation-duration: 0.75s;
+      opacity: 0.5;
+    }
+    
+    @keyframes float {
+      from {
+        will-change: unset;
+        transform: translateY(-10px);
+      }
+      to {
+        will-change: transform;
+        transform: translateY(-30px);
+      }
+    }
+    
+    @keyframes holographic {
+      from {
+        will-change: box-shadow;
+        box-shadow:
+          0 -75px 5px rgba(0, 252, 252, 0.15),
+          0 -1px 2px rgba(0, 252, 252, 0.5),
+          0 -45px 5px rgba(0, 252, 252, 0.15),
+          0 -2px 3px rgba(0, 252, 252, 0.5),
+          0 -3px 4px rgba(0, 252, 252, 0.5),
+          0 -4px 6px rgba(0, 252, 252, 0.5),
+          0 -5px 10px rgba(0, 252, 252, 0.75),
+          0 -7px 20px rgba(0, 252, 252, 0.75),
+          0 -10px 30px rgba(0, 252, 252, 0.75),
+          0 -15px 40px rgba(0, 252, 252, 0.75),
+          0 -25px 50px rgba(0, 252, 252, 0.75),
+          0 -35px 60px rgba(0, 252, 252, 0.85),
+          0 -45px 70px rgba(0, 252, 252, 0.95),
+          0 -65px 80px rgba(0, 252, 252, 1),
+          0 -75px 90px rgba(0, 252, 252, 1);
+      }
+      to {
+        will-change: unset;
+        box-shadow:
+          0 -1px 5px rgba(0, 252, 252, 0.15),
+          0 -1px 2px rgba(0, 252, 252, 0.5),
+          0 -1px 5px rgba(0, 252, 252, 0.15),
+          0 -2px 3px rgba(0, 252, 252, 0.5),
+          0 -3px 4px rgba(0, 252, 252, 0.5),
+          0 -4px 6px rgba(0, 252, 252, 0.5),
+          0 -5px 7px rgba(0, 252, 252, 0.75),
+          0 -7px 10px rgba(0, 252, 252, 0.75),
+          0 -10px 15px rgba(0, 252, 252, 0.75),
+          0 -15px 20px rgba(0, 252, 252, 0.75),
+          0 -25px 25px rgba(0, 252, 252, 0.75),
+          0 -35px 30px rgba(0, 252, 252, 0.85),
+          0 -45px 35px rgba(0, 252, 252, 0.95),
+          0 -65px 40px rgba(0, 252, 252, 1),
+          0 -75px 50px rgba(0, 252, 252, 1);
+      }
+    }
+    
+    .card_button {
+        position: absolute;
+    width: 200px;
+    height: 48px;
+    border: none;
+    margin-top: 57px;
+    color: #02d3d1;
+    margin-left: -13px !important;
+    background: black;
+    border: 2px solid #02cfcd;
+    cursor: pointer;
+    border-radius: 10px;
+    /* background-image: url(http://pngimg.com/uploads/gun/gun_PNG1367.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: float 1s infinite alternate;
+    font-family: Minecraft !important;
+
+    }
+    
+    
+    
+@keyframes textShadow{
+            0% {
+        text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    5% {
+        text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    10% {
+        text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    15% {
+        text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    20% {
+        text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    25% {
+        text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    30% {
+        text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    35% {
+        text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    40% {
+        text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    45% {
+        text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    50% {
+        text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    55% {
+        text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    60% {
+        text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    65% {
+        text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    70% {
+        text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    75% {
+        text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    80% {
+        text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    85% {
+        text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    90% {
+        text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    95% {
+        text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+    100% {
+        text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+    }
+        }
+        html{
+            display: flex;
+            justify-content: center;
+            background: black;
+        }
+        body {
+          margin: 0;
+          
+          width: 100vw;
+        }
+      
+        #canv {
+       
+            margin-top: 35px;
+            
+          z-index: -1;
+          position: absolute; /* Make canvas position: relative */
+        }
+      .flex-container{
+        display: flex;
+      }
+        .container {
+            overflow-x: hidden;
+            min-height: 600px; 
+            margin-top: -30px;
+            position: absolute;
+            z-index: 300;
+            
+            margin-left: 10px;
+            position: absolute;
+            background: linear-gradient(45deg, black, transparent);
+     
+       
+     
+        }
+
+        body{
+           
+        }
+        .inner-container{
+            color: white;
+        padding-top: 80px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 4px solid green;
+        height: 300px;
+        margin-left: 30px;
+        margin-top: 80px;
+        background: #000000ba;
+        
+    
+        }
+        .ic-back{
+            background-image: url('images/anonimus.png');
+            background-size: cover;
+            height: 100px;
+            width: 100px;
+    
+        }
+        .ic-text{
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+            font-family: Minecraft;
+            color: #10d42a;
+            animation: textShadow 1.6s infinite;
+        animation-duration: 1.6s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        animation-name: textShadow;
+    
+        }
+        .usl{
+            display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+        }
+        .center-usl{
+            width: 500px;
+    
+        }
+        .inner-usl{
+            display: flex;
+      
+      justify-content: center;
+      align-items: center;
+        }
+        .iu-button{ 
+            font-size: 11px;
+    width: 139px;
+    height: 36px;
+    margin: 10px;
+    font-weight: 500;
+    color: #36b336;
+    background: black;
+    border: 3px solid green;
+    cursor: pointer;
+    transition: 0.1s;
+    font-family: Minecraft;
+        }
+        .iu-button:hover{
+            background: rgb(21, 21, 21);
+            width: 141px;
+            height: 45px;
+            margin-bottom: 20px;
+            border: 4.5px solid rgb(39, 191, 39);
+            color: rgb(51, 211, 27);
+            animation: shake 1s ease-in-out infinite;
+             
+    }
+    
+    
+    
+    
+    @keyframes shake {
+      0% { transform: translate(0.25px, 0.25px) rotate(0deg); }
+      10% { transform: translate(-0.25px, -0.5px) rotate(-1deg); }
+      20% { transform: translate(-0.75px, 0px) rotate(1deg); }
+      30% { transform: translate(0.75px, 0.5px) rotate(0deg); }
+      40% { transform: translate(0.25px, -0.25px) rotate(1deg); }
+      50% { transform: translate(-0.25px, 0.5px) rotate(-1deg); }
+      60% { transform: translate(-0.75px, 0.25px) rotate(0deg); }
+      70% { transform: translate(0.75px, 0.25px) rotate(-1deg); }
+      80% { transform: translate(-0.25px, -0.5px) rotate(1deg); }
+      90% { transform: translate(0.25px, 0.5px) rotate(0deg); }
+      100% { transform: translate(0.25px, -0.5px) rotate(-1deg); }
+    }
+    
+        
+    .cards{
+        width: 411px;
+    height: 385px;
+    background: #262626;
+    border: 1.5px white solid;
+    left: 750px;
+    top: 180px;
+    z-index: 200;
+    position: absolute;
+    }
+    .close{
+        max-width: 100%;
+        height: 25px;
+        /* float: inherit; */
+        align-items: center;
+        text-align: right;
+        display: flex;
+        justify-content: flex-start;
+        background: #bebfcb;
+        padding-left: 346px;
+    }
+    .close div{
+        background-color: #ffffff4f;
+        width: 20px;
+        margin-left: 5px;
+        height: 20px;
+        cursor: pointer;
+    }
+    .anonymus{
+        width: 100px;
+    }
+    .ic-back {
+        margin-left: 30px;
+        position: absolute;
+        z-index: -1;
+        margin-top: 317px;
+        background-image: url(images/anonimus.png);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+    }
+    .tt1{
+     
+    }
+    .console{
+        color: white;
+        font-size: 15px;
+        font-family: Consolas;
+        padding-top: 10px;
+        /* font-family: Consollas; */
+        padding-left: 10px;
+    }
+    .panel{
+        
+        top: 371px; left: 519px; 
+        width: 497px;
+        z-index: 400;
+        height: 300px;
+        position: absolute;
+        background: #f6f2e9;
+        border-radius: 1px;
+      
+        border: 1.2px solid gray;
+    
+    
+    }
+    .close-panel{
+        max-width: 100%;
+        height: 30px;
+        background-color: #a9aaaf;
+        border: 1.2px solid gray;
+        display: flex;
+        /* align-content: flex-start; */
+        align-items: center;
+        padding-left: 419px;
+    }
+    .close-panel div{
+        background-color: #ffffff4f;
+        height: 25px;
+        width: 25px;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+    .main-panel{
+    
+        background-size: cover;
+        width: 100%;
+        height: 268.5px;
+     animation: repeat-shake-animation 10s infinite;
+}
+
+
+    .inner-mp{
+    
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.63);
+    }
+    .imp-text{
+        color: white;
+        font-family: monospace;
+        /* display: none; */
+        margin-top: 0px;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .panel-img{
+        width: 289px;
+        height: 117px;
+        margin-top: 45px;
+    }
+    .mp1{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        overflow: hidden;
+    }
+    /* определяем анимацию */
+    .mp1-back-tg{
+        width: 480px;
+    padding-left: 15px;
+    
+    position: absolute;
+    height: 269px;
+    background: url(images/Frame\ 8.svg);
+    color: white;
+    font-size: 17px;
+    font-family: Consolas;
+    overflow: hidden;  
+    }
+    .mp1-back {
+        
+        width: 480px;
+    padding-left: 15px;
+    
+    position: absolute;
+    height: 269px;
+    background: url(images/Frame\ 7.svg);
+    color: white;
+    font-size: 17px;
+    font-family: Consolas;
+    overflow: hidden;
+}
+ @keyframes shake-animation {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(0px);
+  }
+  81.25%{
+    transform: translateX(-5px);
+  }
+  87.50%{
+    transform: translateX(5px);
+  }
+  93.75%{
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+
+
+
+.why{
+    width: 168px;
+    height: 174px;
+    margin-top: 185px;
+    border-radius: 50%;
+    margin-left: 51px;
+    /* border: 2px solid green; */
+    box-shadow: 0px 0px 0px 0px #00ff00, 0px 0px 0px 0px #00ff00, 0px 0px 33px 7px #28bc32c2;
+    font-family: Minecraft;
+}
+    
+
+
+.img_mp1 {
+  animation: shake-animation 5s infinite;
+  
+        width: 361px;
+        margin-top: 98px;
+        margin-left: -135px;
+    }
+
+ 
+.info-part{
+    display: flex;
+
+}
+.info-time{
+    animation: shake 8s infinite;
+    overflow: hidden;
+    color: white;
+    font-family: Consolas;
+    font-size: 25px;
+    margin-bottom: -65px;
+    width: 501px;
+    height: 264px;
+    margin-left: 727px;
+    margin-top: -46px;
+ 
+    border-radius: 20px;
+    
+}
+.info-time p{
+    margin-bottom: 1px;
+}
+
+.info-quality{
+    background: linear-gradient(45deg, #1b7618b8, rgb(11 11 11 / 62%), #33333393);
+    margin-bottom: 200px;
+    min-width: 565px;
+    color: #45d2e1;
+    padding: 20px;
+    font-family: 'Minecraft';
+    height: 250px;
+}
+.sms-spans{
+    font-size: 20px;
+}
+#background-video {
+  
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+#background-video video {
+  object-fit: cover;
+}
+.video-sms{
+    width: 324px;
+    height: 200px;
+}
+@keyframes shake-1 {
+  0% { transform: translateX(0) translateY(0px) }
+  25% { transform: translateX(-2px) translateY(-1px)  }
+  50% { transform: translateX(2px) translateY(2px);
+
+    }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0px) translateX(2px) translateY(0px); }
+}
+.info-time-back{
+    animation: shake 8s ease infinite;
+    overflow: hidden;
+    color: white;
+    background: linear-gradient(45deg, #273247b8, rgb(11 11 11 / 0%), #895c31 111%);
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+    width: 573px;
+    height: 275px;
+    padding-top: 20px;
+    border: 0.5px solid #0a480a;
+    /* max-width: 324px; */
+    /* max-height: 180px; */
+    margin-left: 727px;
+    background-color: #000000ab;
+    border-radius: 20px;
+    margin-top: -200px;
+    position: absolute;
+    font-family: Minecraft;
+    
+}
+.info-quality{
+    border: 1.3px solid #3b1762;
+    margin-bottom: 200px;
+    width: 400px;
+    border-radius: 10px;
+    color: #45d2e1;
+    height: 250px;
+    margin-left: 10px;
+}
+.info-quality-back{
+    margin-bottom: 200px;
+    width: 416px;
+    min-width: 604px;
+    max-width: 604px;
+    
+    position: absolute;
+    overflow: hidden;
+    min-height: 290px;
+    max-height: 290px;
+    margin-top: -490px;
+    z-index: -1;
+}
+.developer{
+    width: 200px;
+    margin-left: 386px;
+    margin-top: 99px;
+}
+.info-time-box{
+    background-color: black;
+    margin-left: -439px;
+    margin-top: -192px;
+    position: absolute;
+}
+.molniya1{
+    
+    width: 208px;
+    margin-top: -82px;
+    margin-bottom: 0px;
+}
+.molniya2{
+    margin-left: 327px;
+    margin-top: -25px;
+    width: 303px;
+}
+.box-quality{
+    margin-left: 586px;
+    margin-right: -255px;
+    margin-top: -231px;
+}
+.img-time{
+    width: 127px;
+    margin-bottom: -143px;
+    margin-left: -20px;
+}
+.payment-block{
+    height: 400px;
+    width: 130%;
+    display: flex;
+    margin-left: -15px;
+    background: linear-gradient(180deg, black, rgb(0 0 0), #04331d 99%);
+
+}
+.options{
+    padding-top: -41px;
+    border: 1px solid #00f9ff;
+    border-radius: 5px;
+    box-shadow: 0 0 7px #1dbebc;
+    width: 664px;
+    height: 300px;
+    max-height: 296px;
+    background: linear-gradient(200deg, #10444b, rgb(0 0 0), #3e2a42 99%);
+    border-radius: 10px;
+    position: absolute;
+}
+.inner-options{
+    padding-top: 58px;
+    /* background: #28236e3b; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+
+}
+.inner-options div{
+    background-color: #0e1327;
+    height: 90px;
+    width: 90px;
+    margin-left: 10px;
+    background-size: cover;
+    border-radius: 5px;
+    border: 1px solid #00f9ff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ff00;
+    cursor: pointer;
+}
+.options-text{
+    width: 100%;
+    text-align: center;
+    animation: flicker 1.5s infinite alternate;   
+}
+.it-quickly{
+    animation: flicker 1.5s infinite alternate;
+}
+.a24-7{
+    animation: flicker2 1.5s infinite alternate;
+}
+.TG-block{
+    width: 402px;
+    height: 300px;
+    /* background-color: blue; */
+    margin-left: 814px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, #1b8a9b, rgb(24 59 77), #000000 99%);
+
+}
+.tg-buttons button{
+    margin-right: 5px;
+    width: 160px;
+    background-color: rgb(0 0 0);
+    border-radius: 5px;
+    margin-left: 5px;
+    font-family: Minecraft;
+    color: #3179c8;
+    height: 50px;
+    margin-left: 5px;
+    border: 3px solid #3179c8;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.tg-buttons button:hover{
+    
+    animation: shake 0.3s infinite;
+    margin-right: 5px;
+    width: 170px;
+    background-color: rgb(26 26 26);
+    border-radius: 5px;
+    margin-left: 5px;
+    font-family: Minecraft;
+    color: #01b9ff;
+    height: 56px;
+    margin-left: 5px;
+    border: 3px solid #459bfa;
+    cursor: pointer;
+}
+.avatar{
+    border: 1px solid #00f9ff;
+    border-radius: 100%;
+    box-shadow: 0 0 16px #11e6f4;
+    animation: box-shadow-animation 3s infinite ease-in-out;
+}
+
+@keyframes box-shadow-animation {
+  0% {
+    box-shadow: 0 0 16px #11e6f4;
+  }
+  50% {
+    box-shadow: 0 0 24px #11e6f4;
+  }
+  100% {
+    box-shadow: 0 0 16px #11e6f4;
+  }
+}
+.emoji{
+    animation: flicker2 1.5s infinite alternate;
+}
+.mp1-back-web{
+    width: 480px;
+    padding-left: 18px;
+    
+    position: absolute;
+    height: 269px;
+    background: url(images/Frame\ 9.svg);
+    color: white;
+    font-size: 17px;
+    font-family: Consolas;
+    overflow: hidden;
+}
+
+</style>
+
+<body style="max-width: 1263px;">
+    <canvas id='canv' style="max-width: 1201px;
+    overflow: hidden;
+    /* position: absolute; */
+    /* margin-right: -54px; */
+    margin-left: 10px;"></canvas>
+<div class='container'>
+    <div style="width: 100%;min-height: 100px;"></div>
+      <div class="flex-container">
+        
+      
+  
+    <div class="ic-back">
+        </div>
+            <div class="inner-container">
+                <p class="ic-text">услуги разработки</p>
+                <div class="usl">
+                    <div class='center-usl'>
+    
+                    
+                        <div class="inner-usl">
+                            <button class="iu-button">WEB</button>
+                            <button class="iu-button">TG боты</button>
+                            <button class="iu-button">Смартконтракты</button>
+                        </div>
+                        <div class="inner-usl">
+                           
+                            <button class="iu-button">Другое</button>
+                        </div>
+                    </div>
+    
+                </div>
+                
+            </div>
+      
+      <div class="cards">
+          <div class="close">
+              <div class="close-console" style="background-image: url('images/svern.png'); background-size: cover;"></div>
+           
+              <div  class="close-console" style="background-image: url('images/close.png'); background-size: cover;"></div>
+          </div>
+          <div class="console">
+              <p class="tt1">(c) Microsoft Corporation. All rights reserved.<br>
+  
+                          C:\Users\admin><span class="terminal-text1 able_change">_</span></p>
+                          <p class="loading_terminal"></p>
+                          <p class="openning"></p>
+          </div>
+          
+          
+      </div>
+      <div class="panel" style=" position: absolute;">
+          <div class="close-panel">
+              <div class="close-in"style="background-image: url('images/svern.png'); background-size: cover;"></div>
+           
+              <div class="close-in" style="background-image: url('images/close.png'); background-size: cover;"></div>
+  
+          </div>
+          <div class="main-panel">
+            <div class="inner-mp">
+
+              <div class="mp1-back-web" style="">
+                  
+           
+                <p style="color: #FFF;margin-top: 69px;
+                font-feature-settings: 'clig' off, 'liga' off;
+                font-family: Minecraft;
+                font-size: 25px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 50%; /* 32.5px */
+                text-shadow:
+        
+        -1px -1px 0 #214D73, /* Обводка сверху слева */
+         1px -1px 0 #214D73, /* Обводка сверху справа */
+        -1px 1px 0 #214D73, /* Обводка снизу слева */
+         1px 1px 0 #214D73; /* Обводка снизу справа */
+
+                ">
+                    Web разработка:
+                    <br>
+                    <p style="color: #FFF;
+                    font-feature-settings: 'clig' off, 'liga' off;
+                    font-family: Minecraft;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;line-height: 250%;
+                    text-shadow:
+        
+        -1px -1px 0 #214D73, /* Обводка сверху слева */
+         1px -1px 0 #214D73, /* Обводка сверху справа */
+        -1px 1px 0 #214D73, /* Обводка снизу слева */
+         1px 1px 0 #214D73; /* Обводка снизу справа */ 
+                    ">-Фронтенд-разработка
+                    <br>
+                   -Бэкенд-разработка 
+                    <br>
+                    -Дизайн и визуал.</p>
+                </p>
+                    
+              
+                  
+                  
+                  
+                 
+              </div>
+  
+               </div>
+  
+          </div>
+      </div>
+      
+      
+</div>
+<div class="info-part">
+    <img src="images/comixzone.png" alt="" class="why">
+    <div class="dialogue-container">
+            <div class="dialogue">
+            <p>С чего бы нам брать у тебя? Что в тебе такого?</p>
+            </div>
+            <div class="tail"></div>
+        </div>
+</div>
+    <div class="box-quality">
+
+        <div class="info-quality">
+            <div class="box1">
+                <h1 class="glitch" style="color: #2bffff;">Это выгодно и<br> удобно</h1></div>
+            
+            <span>Мало того, что работая со мной</span><br>
+            <span>вы не получите наценку за воздух,</span><br>
+            <span>так и еще вы получаете<br>
+                поддержку 24/7,<br>даже после приобретения товара</span>
+                <h2 class="a24-7"style="        margin-left: 420px;
+                margin-top: 31px;
+                color: #2ed8eb;">24/7</h2>
+            
+        </div>
+        <div class="info-quality-back">
+            
+            <img src="images/developer.png" class="developer" alt="">
+    
+        </div>
+    </div>
+    <div class="info-time-box">
+            <div class="info-time">
+                <img src="images/molniya.png" class="molniya1" alt="">
+                <img src="images/time.png" alt="" class="img-time">
+            </div>
+            <div class="info-time-back">
+                <div style="width: 100%; text-align: center;">
+                    <p style="
+                    color: orange;" class="it-quickly">Это быстро</p>
+                    <span style="
+                    color: rgb(255, 234, 0);">⚡️Никаких задержек⚡️</span><br><br>
+                    <span style="
+                    color: #f0ff06;"><span class="emoji">⚡️</span>Исключительно в срок<span class="emoji">⚡️</span></span><br> 
+                </div>
+                
+                <img src="images/molniya.png" class="molniya2" alt="">
+            </div>
+            
+    </div>
+    <div style="height: 200px;">
+
+    </div>
+    <div class="payment-block" style="max-width: 1216px;">
+        <div class="options">
+            <div class="inner-options">
+                <div class="neon-border"style="background-image: url(images/metamask.png);;"></div>
+                <div style="background-image: url(images/exodus-wallet.jpg)"></div>
+                <div style="background-image: url(images/trustwallet.png)"></div>
+                <div style="background-image: url(images/download.svg);background-size: 74px 82px;
+                background-position: center;
+                background-repeat: no-repeat;"></div>
+                <div style="background-image: url(images/paypal.png);background-size: 72px 65px;
+                background-position: center;
+                background-repeat: no-repeat;"></div>
+            </div>
+            <div class="options-text">
+                 <h2 style="font-family: Minecraft;
+                 color: #45d2e1;">Принимаю оплату на:</h2>
+                
+            </div>
+            <div style="width: 100%;display: flex;justify-content: center;margin-top: 20px;">
+            <span style="font-family: Minecraft;
+                 color: #45d1e18f;">Оплата 50% или 100% на ваш выбор</span>
+            </div>
+        </div>
+ <div class="TG-block">
+    <!-- <div style="width: 100%;display: flex;justify-content: center;margin-top: 60px;">
+        <img src="images/tg.png" alt=""><br>
+        
+    </div> -->
+    <div style="width: 100%;display: flex;justify-content: center;margin-top: 20px;">
+        <img class="avatar" style="width: 100px;"src="images/avatar.jpg" alt="">
+        
+    </div>
+            <div style="width: 100%;
+            color: #2adeff;
+            /* font-size: 20px; */
+            font-family: Minecraft;
+        display: flex;justify-content: center;margin-top: 20px;">
+                <p >Готов к вашим услугам!</p>
+        
+    </div>
+    <div class="tg-buttons"style="width: 100%;display: flex;justify-content: center;margin-top: 20px;">
+     <button>@big_script</button>
+     <button>Написать</button>
+    </div>
+    
+</div>
+    </div>
+    
+
+</div>
+
+    
+</body>
+<script src="script.js"></script>
+</html>
