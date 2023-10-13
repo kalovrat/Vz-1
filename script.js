@@ -1,5 +1,5 @@
 const canvas = document.getElementById('canv');
-const container = document.querySelector('.container');
+const container = document.querySelector('.container'); 
 const ctx = canvas.getContext('2d');
 container.style.marginTop = -1 *screen.height
 container.style.minHeight = screen.height 
